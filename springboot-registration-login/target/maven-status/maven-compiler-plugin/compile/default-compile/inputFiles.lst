@@ -1,0 +1,13 @@
+/Users/sebastianraba/Desktop/hellokoding-courses/springboot-examples/springboot-registration-login/src/main/java/com/hellokoding/auth/model/User.java
+/Users/sebastianraba/Desktop/hellokoding-courses/springboot-examples/springboot-registration-login/src/main/java/com/hellokoding/auth/service/UserService.java
+/Users/sebastianraba/Desktop/hellokoding-courses/springboot-examples/springboot-registration-login/src/main/java/com/hellokoding/auth/service/UserServiceImpl.java
+/Users/sebastianraba/Desktop/hellokoding-courses/springboot-examples/springboot-registration-login/src/main/java/com/hellokoding/auth/repository/UserRepository.java
+/Users/sebastianraba/Desktop/hellokoding-courses/springboot-examples/springboot-registration-login/src/main/java/com/hellokoding/auth/validator/UserValidator.java
+/Users/sebastianraba/Desktop/hellokoding-courses/springboot-examples/springboot-registration-login/src/main/java/com/hellokoding/auth/WebSecurityConfig.java
+/Users/sebastianraba/Desktop/hellokoding-courses/springboot-examples/springboot-registration-login/src/main/java/com/hellokoding/auth/web/UserController.java
+/Users/sebastianraba/Desktop/hellokoding-courses/springboot-examples/springboot-registration-login/src/main/java/com/hellokoding/auth/service/SecurityService.java
+/Users/sebastianraba/Desktop/hellokoding-courses/springboot-examples/springboot-registration-login/src/main/java/com/hellokoding/auth/WebApplication.java
+/Users/sebastianraba/Desktop/hellokoding-courses/springboot-examples/springboot-registration-login/src/main/java/com/hellokoding/auth/service/SecurityServiceImpl.java
+/Users/sebastianraba/Desktop/hellokoding-courses/springboot-examples/springboot-registration-login/src/main/java/com/hellokoding/auth/model/Role.java
+/Users/sebastianraba/Desktop/hellokoding-courses/springboot-examples/springboot-registration-login/src/main/java/com/hellokoding/auth/repository/RoleRepository.java
+/Users/sebastianraba/Desktop/hellokoding-courses/springboot-examples/springboot-registration-login/src/main/java/com/hellokoding/auth/service/UserDetailsServiceImpl.java
