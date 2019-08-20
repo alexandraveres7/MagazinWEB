@@ -74,18 +74,47 @@ public class UserController {
         return "navbar";
     }
 
-    @RequestMapping(value = "/searchProducts")
-    public String listSearchProducts(@RequestParam("nume") String nume, Model mo) {
-        ArrayList<Product> b = productService.Search(nume, "pret-crescator", 0.00, 9.99);
-        mo.addAttribute("listaCautata", b);
-        return "listproducts";
+    @RequestMapping(value="/dropdown", method = RequestMethod.GET)
+         public String aa(){
+          return "dropdown+search";
     }
 
+    @RequestMapping(value = "/searchProducts")
+    public String listSearchProducts(@RequestParam("nume") String nume, @RequestParam("ordine") String ordine, @RequestParam("pret") String pret, Model mo)
+    {
+        if(ordine.equals("1")){
+            if(pret.equals("option1")){
+                ArrayList<Product> a = productService.Search(nume, "pret-crescator", 0.00, 5.00);
+                mo.addAttribute("listaCautata", a);
+            }
 
-   /* @RequestMapping(value = "/sortedList", method = RequestMethod.GET)
-    public String so(Model mo) {
-        ArrayList<Product> b = productService.Search("Iaurtel", "pret-crescator", 0.00, 9.99);
-        mo.addAttribute("listaCautata", b);
+            else if(pret.equals("option2")){
+                ArrayList<Product> a = productService.Search(nume, "pret-crescator", 5.00, 10.00);
+                mo.addAttribute("listaCautata", a);
+            }
+
+            else if(pret.equals("option3")){
+                ArrayList<Product> a = productService.Search(nume, "pret-crescator", 10.00, 50.00);
+                mo.addAttribute("listaCautata", a);
+            }
+        }
+
+        else if(ordine.equals("2")){
+            if(pret.equals("option1")){
+                ArrayList<Product> a = productService.Search(nume, "pret-descrescator", 0.00, 5.00);
+                mo.addAttribute("listaCautata", a);
+            }
+
+            else if(pret.equals("option2")){
+                ArrayList<Product> a = productService.Search(nume, "pret-descrescator", 5.00, 10.00);
+                mo.addAttribute("listaCautata", a);
+            }
+
+            else if(pret.equals("option3")){
+                ArrayList<Product> a = productService.Search(nume, "pret-descrescator", 10.00, 50.00);
+                mo.addAttribute("listaCautata", a);
+            }
+        }
         return "listproducts";
-    }*/
+    }
 }

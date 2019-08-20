@@ -23,6 +23,7 @@
 
 </head>
 <body>
+<form class="form-inline" action="<s:url value="/searchProducts"/>">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -30,49 +31,47 @@
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Ordoneaza dupa <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Pret crescator</a></li>
-                    <li><a href="#">Pret descrescator</a></li>
-                    <li><a href="#">Nume A-Z</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Cosul meu</a></li>
+                <select name="ordine">
+                    <option value="1">Crescator</option>
+                    <option value="2">Descrescator</option>
+                </select>
+        <li><a href="#">Cosul meu</a></li>
             <li><a href="#">Preferate</a></li>
         </ul>
 
-        <form class="form-inline" action="<s:url value="/searchProducts"/>">
             <input class="form-control" name="nume" type="text" placeholder="Search">
             <button class="btn btn-info" type="submit">Search</button>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="registration"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
             <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
         </ul>
-        </form>
     </div>
 </nav>
 
 <div align="left" class="container">
+
     <h3>Pret</h3>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="pret1" value="option1" checked>
+    <div class="form-check" >
+        <input class="form-check-input" type="radio" name="pret" id="pret1" value="option1" checked>
         <label class="form-check-label" for="pret1">
-           Sub 50
+           Sub 5 RON
         </label>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="pret2" value="option2">
+        <input class="form-check-input" type="radio" name="pret" id="pret2" value="option2">
         <label class="form-check-label" for="pret2">
-           50-100
+           5-10 RON
         </label>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="pret3" value="option2">
+        <input class="form-check-input" type="radio" name="pret" id="pret3" value="option3">
         <label class="form-check-label" for="pret3">
-            100-500
+            10-50 RON
         </label>
     </div>
 </div>
+</form>
+
 <div align="center">
     <table border="1" cellpadding="5">
         <caption><h2>List of products</h2></caption>

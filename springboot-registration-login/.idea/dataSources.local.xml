@@ -11,8 +11,10 @@
       <user-name>root</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="schema" qname="@" />
-          <node kind="schema" qname="magazinweb" />
+          <node kind="schema">
+            <name qname="@" />
+            <name qname="magazinweb" />
+          </node>
         </introspection-scope>
       </schema-mapping>
     </data-source>

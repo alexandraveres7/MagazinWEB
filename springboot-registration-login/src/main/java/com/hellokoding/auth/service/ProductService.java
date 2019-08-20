@@ -15,7 +15,8 @@ public class ProductService {
     public ProductService(){
         lista = new ArrayList<>();
         lista.add(new Product("Cirese", 100, 1.99));
-        lista.add(new Product("Biscuiti", 100, 6.99));
+        lista.add(new Product("Biscuiti cu cereale", 100, 6.99));
+        lista.add(new Product("Biscuiti de ciocolata", 100, 9.99));
         lista.add(new Product("Paine", 100, 1.99));
         lista.add(new Product("Iaurt", 100, 3.99));
         lista.add(new Product("Iaurt cu fructe", 100, 5.99));
