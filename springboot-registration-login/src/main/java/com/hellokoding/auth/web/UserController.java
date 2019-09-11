@@ -11,12 +11,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class UserController {
-    ProductService productService = new ProductService();
+
+    @Autowired
+    ProductService productService;
 
     @Autowired
     private UserService userService;
@@ -26,6 +27,24 @@ public class UserController {
 
     @Autowired
     private UserValidator userValidator;
+
+    @GetMapping("/addproducts")
+    public String addProduct(Model model){
+        model.addAttribute("produs", new Product("a", 1, 1.1));
+
+        return "addproduct";
+    }
+
+    @PostMapping("/addproducts")
+    public String adaugaProdus(@ModelAttribute("produs") Product produs, BindingResult bindingResult){
+        productService.save(produs);
+
+        if (bindingResult.hasErrors()) {
+            return "addproducts";
+        }
+
+        return "redirect:/listProducts";
+    }
 
     @GetMapping("/registration")
     public String registration(Model model) {
@@ -62,21 +81,16 @@ public class UserController {
 
     @GetMapping({"/", "/welcome"})
     public String welcome(Model model) {
-        ArrayList<Product> a = productService.getList();
+        List<Product> a = productService.getList();
         model.addAttribute("listaProduselor", a);
         return "welcome";
     }
 
     @RequestMapping(value = "/listProducts", method = RequestMethod.GET)
     public String home(Model model) {
-        ArrayList<Product> a = productService.getList();
+        List<Product> a = productService.getList();
         model.addAttribute("listaProduselor", a);
         return "navbar";
-    }
-
-    @RequestMapping(value="/dropdown", method = RequestMethod.GET)
-         public String aa(){
-          return "dropdown+search";
     }
 
     @RequestMapping(value = "/searchProducts")
@@ -84,34 +98,34 @@ public class UserController {
     {
         if(ordine.equals("1")){
             if(pret.equals("option1")){
-                ArrayList<Product> a = productService.Search(nume, "pret-crescator", 0.00, 5.00);
+                List<Product> a = productService.Search(nume, "pret-crescator", 0.00, 5.00);
                 mo.addAttribute("listaCautata", a);
             }
 
             else if(pret.equals("option2")){
-                ArrayList<Product> a = productService.Search(nume, "pret-crescator", 5.00, 10.00);
+                List<Product> a = productService.Search(nume, "pret-crescator", 5.00, 10.00);
                 mo.addAttribute("listaCautata", a);
             }
 
             else if(pret.equals("option3")){
-                ArrayList<Product> a = productService.Search(nume, "pret-crescator", 10.00, 50.00);
+                List<Product> a = productService.Search(nume, "pret-crescator", 10.00, 50.00);
                 mo.addAttribute("listaCautata", a);
             }
         }
 
         else if(ordine.equals("2")){
             if(pret.equals("option1")){
-                ArrayList<Product> a = productService.Search(nume, "pret-descrescator", 0.00, 5.00);
+                List<Product> a = productService.Search(nume, "pret-descrescator", 0.00, 5.00);
                 mo.addAttribute("listaCautata", a);
             }
 
             else if(pret.equals("option2")){
-                ArrayList<Product> a = productService.Search(nume, "pret-descrescator", 5.00, 10.00);
+                List<Product> a = productService.Search(nume, "pret-descrescator", 5.00, 10.00);
                 mo.addAttribute("listaCautata", a);
             }
 
             else if(pret.equals("option3")){
-                ArrayList<Product> a = productService.Search(nume, "pret-descrescator", 10.00, 50.00);
+                List<Product> a = productService.Search(nume, "pret-descrescator", 10.00, 50.00);
                 mo.addAttribute("listaCautata", a);
             }
         }
